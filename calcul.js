@@ -5,11 +5,21 @@ var operateur = document.querySelector('#operateur');
 var res = document.querySelector('#resultat');
 button.addEventListener('click', function(e){
 	e.preventDefault();
-	if (operateur.value == 1) {
-		operateur = '+';
-	} else if (operateur.value == 2) {
-		operateur = '*';
+	var ope = operateur.value;
+	switch(ope) {
+		case 1:
+			ope = '+';
+			break;
+		case 2:
+			ope = '*';
+			break;
+		case 3:
+			ope = '-';
+			break;
+		case 4:
+			ope = '/';
+			break;
 	}
-	var result = input1.value + operateur + input2.value;
+	var result = input1.value + ope + input2.value;
 	res.innerHTML = eval(result);
 })
